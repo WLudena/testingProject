@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="#" th:object="${trainer}" method="post" enctype="multipart/form-data">
+        <div>
+            Id: <input name="id" th:field="*{id}"/>
+        </div>
+        <div>
+            First name: <input name="firstName" th:field="*{firstName}"/>
+        </div>
+        <div>
+            Last name: <input name="lastName" th:field="*{lastName}"/>
+        </div>
+        <div>
+            <input type="submit" value="Create developer" name="button"/>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Course</title>
+</head>
+<body>
+    <h1>Create new course: </h1>
+    <form th:action="@{/course/addCourse}" th:object="${courseEntity}" method="post" enctype="multipart/form-data">
+        <div>
+            Id: <input name="courseId" />
+        </div>
+        <div>
+            Course name: <input name="courseName" />
+        </div>
+        <div>
+            Course description: <input name="courseDescription" />
+        </div>
+        <div>
+            Duration: <input name="durationInWeeks" />
+        </div>
+        <div>
+            <input type="submit" value="Create course" name="button"/>
+        </div>
+    </form>
+
+    <form th:object="${modules}">
+        <table>
+            <tr>
+                <td>Select Course</td>
+                <td>
+                    <select th:field="*{moduleId}">
+                        <option value="">Select Module</option>
+                        <option th:each="module : ${modules}"
+                                th:value="${module.moduleId}"
+                                th:utext="${module.moduleName}"/>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <input type="submit" value="pick Module" name="button"/>
+        </div>
+    </form>
+</body>
+</html>

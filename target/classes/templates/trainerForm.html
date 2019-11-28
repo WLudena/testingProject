@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Developers database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Trainers</h1>
+<form th:action="@{/add}" method="post" enctype="multipart/form-data">
+    <div>
+        Id: <input name="id" />
+    </div>
+    <div>
+        First name: <input name="firstName" />
+    </div>
+    <div>
+        Last name: <input name="lastName" />
+    </div>
+    <div>
+        <input type="submit" value="Create developer" name="button"/>
+    </div>
+</form>
+</body>
+</html>
